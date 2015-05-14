@@ -1,0 +1,41 @@
+{
+  "name": "strelok",
+  "version": "0.0.1",
+  "description": "On-going experiment with Three.js and Component Entity System",
+  "main": "gulpfile.js",
+  "private": true,
+  "scripts": {
+    "start": "gulp",
+    "preview": "gulp preview",
+    "build": "gulp build",
+    "shipit": "gulp shipit"
+  },
+  "dependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-gh-pages": "^0.5.0",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jade": "^1.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-stylus": "^2.0.1",
+    "gulp-uglify": "^1.1.0",
+    "jade": "^1.9.2",
+    "nib": "^1.1.0",
+    "run-sequence": "^1.0.2",
+    "stylus": "^0.50.0",
+    "uglify-js": "^2.4.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ESWAT/cektop.git"
+  },
+  "author": "Philip Karpiak <operations@eswat.ca> (http://eswat.ca/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ESWAT/cektop/issues"
+  },
+  "homepage": "http://eswat.ca/cektop"
+}
