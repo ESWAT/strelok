@@ -1,14 +1,10 @@
-# CEKTOP
+# STRELOK
 
 [![Dependency Status](https://david-dm.org/eswat/cektop.svg)](https://david-dm.org/eswat/cektop)
 
-> A static site generator for GitHub Pages
+> On-going experiment with Three.js and Component Entity System
 
-CEKTOP helps you bootstrap your website or app using a Gulp & Node.js stack that’s very configurable. So you’re not stuck using the default setup of Jekyll or plain jane HTML/CSS/JavaScript.
-
-Out of the box CEKTOP compiles Jade and Stylus files, compresses JS files with UglifyJS and compresses images with gulp-imagemin.
-
-If there’s a Gulp plugin for it you can use it; remove and extend things as needed. Once you’re satisfied with your work you can publish it with a single Gulp task.
+STRELOK is a very unfinished Ludum Dare entry that I’m going to continue fleshing out into something that actually resembles a game. Maybe…
 
 ## Start
 
@@ -55,6 +51,6 @@ All of the magic is done in `gulpfile.js`, so take a look at that if you want to
 
 ## License
 
-CEKTOP is released under the [MIT License](LICENSE).
+STRELOK is released under the [MIT License](LICENSE).
 
 When creating deriative works that include writing, or anything you’re cautious about being modified freely, you should consider replacing this license with one from [Creative Commons](http://creativecommons.org/choose/) instead.
