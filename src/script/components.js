@@ -34,6 +34,13 @@ var Appearance = CES.Component.extend({
     }
 });
 
+var Light = CES.Component.extend({
+    name: 'light',
+    init: function(light) {
+        this.light = light;
+    }
+});
+
 var Player = CES.Component.extend({
     name: 'player',
     init: function (camera) {
