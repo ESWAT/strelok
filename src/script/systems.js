@@ -1,6 +1,10 @@
 // systems.js
 
 var InputSystem = CES.System.extend({
+    addedToWorld: function(world) {
+        var playerCam = pawn.getComponent('player').camera;
+        playerCam.rotation.y = Math.PI;
+    },
     update: function (dt) {
         var playerPos = pawn.getComponent('position');
         var playerCam = pawn.getComponent('player').camera;
@@ -54,6 +58,6 @@ var RenderSystem = CES.System.extend({
         })
     },
     update: function (dt) {
-        renderer.render( scene, pawnCamera );
+        renderer.render( scene, pawn.getComponent('player').camera );
     }
 });

@@ -2,7 +2,12 @@
 
 var pawn = new CES.Entity();
 pawn.addComponent(new Position(0, 0, 0));
-pawn.addComponent(new Player(pawnCamera));
+pawn.addComponent(new Player(
+  new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1, 1000)
+));
 
 var corridor = new CES.Entity();
 corridor.addComponent(new Position(0, 0, 1));
