@@ -1,20 +1,20 @@
 // systems.js
 
-var InputSystem = CES.System.extend({
+var PawnSystem = CES.System.extend({
     addedToWorld: function(world) {
-        var playerCam = pawn.getComponent('player').camera;
-        playerCam.rotation.y = Math.PI;
+        var pawnCam = pawn.getComponent('player').camera;
+        pawnCam.rotation.y = Math.PI;
     },
     update: function (dt) {
-        var playerPos = pawn.getComponent('position');
-        var playerCam = pawn.getComponent('player').camera;
+        var pawnPos = pawn.getComponent('position');
+        var pawnCam = pawn.getComponent('player').camera;
 
 
         if (pawn.hasComponent('destination')) {
-            var playerDest = pawn.getComponent('destination');
-            if (playerPos.z < playerDest.z) {
-                playerPos.z += 1 * dt;
-                playerCam.position.z = playerPos.z;
+            var pawnDest = pawn.getComponent('destination');
+            if (pawnPos.z < pawnDest.z) {
+                pawnPos.z += 1 * dt;
+                pawnCam.position.z = pawnPos.z;
             }
             else {
                 pawn.removeComponent('destination');
@@ -22,9 +22,9 @@ var InputSystem = CES.System.extend({
         }
 
         if (keyboard.pressed("w") && pawn.hasComponent('destination') === false) {
-            pawn.addComponent(new Destination(0, 0, playerPos.z + 1));
-            playerPos.z += 1 * dt;
-            playerCam.position.z = playerPos.z;
+            pawn.addComponent(new Destination(0, 0, pawnPos.z + 1));
+            pawnPos.z += 1 * dt;
+            pawnCam.position.z = pawnPos.z;
         }
     }
 });
