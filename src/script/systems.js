@@ -27,14 +27,16 @@ var InputSystem = CES.System.extend({
 
 var RenderSystem = CES.System.extend({
     addedToWorld: function(world) {
-        this._super(world);
+        world.entityAdded('appearance').add(function(entity) {
+            var position = entity.getComponent('position'),
+                rotation = entity.getComponent('rotation');
+                mesh = entity.getComponent('appearance').mesh;
 
-        var visibleEntities = this.world.getEntities('appearance');
-
-        visibleEntities.forEach(function (visibleEntity) {
-            var position = visibleEntity.getComponent('position'),
-                rotation = visibleEntity.getComponent('rotation');
-                mesh = visibleEntity.getComponent('appearance').mesh;
+            console.log(entity.getComponent('appearance'));
+                
+            if (typeof mesh === 'undefined') {
+                return;
+            }
 
             if (position) {
                 mesh.position.x = position.x;
@@ -49,7 +51,7 @@ var RenderSystem = CES.System.extend({
             }
 
             scene.add(mesh);
-        });
+        })
     },
     update: function (dt) {
         renderer.render( scene, pawnCamera );

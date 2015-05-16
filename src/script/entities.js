@@ -7,10 +7,10 @@ pawn.addComponent(new Player(pawnCamera));
 var ceiling = new CES.Entity();
 ceiling.addComponent(new Position(0, 1, 4));
 ceiling.addComponent(new Rotation(90*(Math.PI/180), 0, 0));
-ceiling.addComponent(new Appearance(new THREE.Mesh(
-  new THREE.PlaneGeometry( 2, 8, 0, 8 ),
-  new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } )
-)));
+// ceiling.addComponent(new Appearance(new THREE.Mesh(
+//   new THREE.PlaneGeometry( 2, 8, 0, 8 ),
+//   new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } )
+// )));
 
 var floor = new CES.Entity();
 floor.addComponent(new Position(0, -1, 4));
@@ -23,23 +23,31 @@ floor.addComponent(new Appearance(new THREE.Mesh(
 var leftWall = new CES.Entity();
 leftWall.addComponent(new Position(1, 0, 4));
 leftWall.addComponent(new Rotation(0, 90*(Math.PI/180), 90*(Math.PI/180)));
-leftWall.addComponent(new Appearance(new THREE.Mesh(
-  new THREE.PlaneGeometry( 2, 8, 0, 8 ),
-  new THREE.MeshBasicMaterial( { color: 0x0000ff, wireframe: true } )
-)));
+// leftWall.addComponent(new Appearance(new THREE.Mesh(
+//   new THREE.PlaneGeometry( 2, 8, 0, 8 ),
+//   new THREE.MeshBasicMaterial( { color: 0x0000ff, wireframe: true } )
+// )));
 
 var rightWall = new CES.Entity();
 rightWall.addComponent(new Position(-1, 0, 4));
 rightWall.addComponent(new Rotation(0, 90*(Math.PI/180), 90*(Math.PI/180)));
-rightWall.addComponent(new Appearance(new THREE.Mesh(
-  new THREE.PlaneGeometry( 2, 8, 0, 8 ),
-  new THREE.MeshBasicMaterial( { color: 0xffff00, wireframe: true } )
-)));
+// rightWall.addComponent(new Appearance(new THREE.Mesh(
+//   new THREE.PlaneGeometry( 2, 8, 0, 8 ),
+//   new THREE.MeshBasicMaterial( { color: 0xffff00, wireframe: true } )
+// )));
 
-var endWall = new CES.Entity();
-endWall.addComponent(new Position(0, 0, 8));
-endWall.addComponent(new Rotation(0, 0, 0));
-endWall.addComponent(new Appearance(new THREE.Mesh(
-  new THREE.PlaneGeometry( 2, 2, 2, 0 ),
-  new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } )
-)));
+
+var endWall = new CES.Entity();;
+
+function assetsLoaded (geometry) {
+  corridorMesh = new THREE.Mesh(
+    geometry,
+    new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } )
+  )
+  endWall.addComponent(new Position(0, 0, 1));
+  endWall.addComponent(new Rotation(0, 0, 0));
+  endWall.addComponent(new Appearance(new THREE.Mesh(
+    geometry,
+    new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } )
+  )));
+}

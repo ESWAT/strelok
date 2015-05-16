@@ -8,7 +8,7 @@ var now,
 
 // RenderSystem
 
-var scene, camera, renderer;
+var scene, camera, renderer, loader, corridorMesh;
 
 scene = new THREE.Scene();
 
@@ -19,5 +19,8 @@ renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 
 document.body.appendChild( renderer.domElement );
+
+loader = new THREE.JSONLoader();
+loader.load('../assets/corridor.js', assetsLoaded);
 
 var keyboard = new THREEx.KeyboardState()
