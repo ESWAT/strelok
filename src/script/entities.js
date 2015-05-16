@@ -8,6 +8,9 @@ pawn.addComponent(new Player(
     window.innerWidth / window.innerHeight,
     0.1, 1000)
 ));
+pawn.addComponent(new Light(
+  new THREE.PointLight( 0xffffff )
+));
 
 var corridor = new CES.Entity();
 corridor.addComponent(new Position(0, 0, 1));
@@ -16,6 +19,6 @@ corridor.addComponent(new Rotation(0, 0, 0));
 function assetsLoaded (geometry) {
   corridor.addComponent(new Appearance(new THREE.Mesh(
     geometry,
-    new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } )
+    new THREE.MeshPhongMaterial( { color: 0x888888 } )
   )));
 }
