@@ -8,7 +8,7 @@ var now,
 
 // RenderSystem
 
-var scene, camera, renderer, loader, corridorMesh;
+var scene, camera, renderer, loader;
 
 scene = new THREE.Scene();
 
